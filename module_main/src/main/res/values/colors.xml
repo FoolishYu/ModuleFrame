@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="module_main_colorPrimary">#3F51B5</color>
+    <color name="module_main_colorPrimaryDark">#303F9F</color>
+    <color name="module_main_colorAccent">#FF4081</color>
+
+    <color name="module_main_transparent">#00000000</color>
+
+    <color name="module_main_placeholder">#A4A4A4</color>
+</resources>

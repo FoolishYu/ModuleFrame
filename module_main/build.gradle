@@ -1,0 +1,57 @@
+if (isModule.toBoolean()) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+}
+apply plugin: 'com.jakewharton.butterknife'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [ moduleName : project.getName() ]
+            }
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    resourcePrefix getName()
+
+    sourceSets {
+        main {
+            if (isModule.toBoolean()) {
+                manifest.srcFile 'src/module/AndroidManifest.xml'
+                java.srcDirs += 'src/java/module'
+                res.srcDirs += 'src/module/res'
+            } else {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+            }
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    // 路由（必须）
+    compile ("com.alibaba:arouter-api:$rootProject.arouterApi", {
+        exclude group: 'com.android.support'
+    })
+    annotationProcessor "com.alibaba:arouter-compiler:$rootProject.arouterCompiler"
+    // 其他Module
+    compile project(':module_comm')
+    compile project(':repository')
+    // 其他
+    compile "com.jakewharton:butterknife:$rootProject.butterknife"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.butterknifeCompiler"
+}

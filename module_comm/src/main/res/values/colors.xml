@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="module_comm_colorPrimary">#3F51B5</color>
+    <color name="module_comm_colorPrimaryDark">#303F9F</color>
+    <color name="module_comm_colorAccent">#FF4081</color>
+
+    <color name="module_comm_transparent">#00000000</color>
+
+    <color name="module_comm_placeholder">#A4A4A4</color>
+</resources>

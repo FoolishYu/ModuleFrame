@@ -1,0 +1,11 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="module_image_AppTheme" parent="Theme.AppCompat.Light">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/module_image_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/module_image_colorPrimaryDark</item>
+        <item name="colorAccent">@color/module_image_colorAccent</item>
+    </style>
+
+</resources>

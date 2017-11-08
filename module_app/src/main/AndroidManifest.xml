@@ -1,0 +1,11 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.senierr.app">
+
+    <application
+        android:name="com.module.app.SessionApplication"
+        android:label="@string/module_comm_app_name"
+        android:icon="@mipmap/module_comm_ic_launcher"
+        android:theme="@style/module_comm_AppTheme">
+    </application>
+
+</manifest>
